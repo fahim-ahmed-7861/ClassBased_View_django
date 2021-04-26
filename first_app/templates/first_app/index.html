@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends "first_app/base.html" %}
+{% load static  %}
+
+{% block body_block %}
+
+<ul>
+{% for musician in musician_list %}
+   <li> <a href="{% url 'first_app:musician_details' pk=musician.pk %}">{{musician.first_name}} {{musician.last_name}} </a> </li>
+
+
+
+
+{% endfor %}
+
+
+  </ul>
+<!--
+
+  <h1>Hi I am template</h1>
+
+  <h2>{{sample_text_1}}</h2>
+
+  <h5>{{ sample_text_2 }}</h5>
+
+--->
+
+
+
+{% endblock %}
+

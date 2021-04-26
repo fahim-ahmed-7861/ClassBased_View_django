@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% extends "first_app/base.html" %}
+{% load static  %}
+
+{% block body_block %}
+
+{% if form.instance.pk %}
+   <h3>Update Musician</h3>
+{% else %}
+  <h3>Add New Musician</h3>
+
+{% endif %}
+
+  <form method="post">
+
+     {{ form.as_p }}
+
+     {% csrf_token %}
+
+     <input type="submit" value="Add" name="submit" class="btn  btn-primary">
+
+
+
+  </form>
+
+{% endblock %}
+
